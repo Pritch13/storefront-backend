@@ -5,7 +5,6 @@ import (
 )
 
 func InitializeRoutes(r gin.IRouter) {
-
 	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "pong",
@@ -14,11 +13,7 @@ func InitializeRoutes(r gin.IRouter) {
 
 	apiRoutes := r.Group("/api")
 	{
-		apiRoutes.GET("/items", func(c *gin.Context) {
-			c.JSON(200, gin.H{
-				"message": "itemshere",
-			})
-		})
+		apiRoutes.GET("/items", getItemsHandler)
 	}
 
 }
