@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/pritch13/storefront-backend/api"
 )
 
 func main() {
@@ -9,7 +10,7 @@ func main() {
 
 	r.Use(gin.Logger())
 
-	// InitializeRoutes()
+	api.InitializeRoutes(r)
 
 	r.Run()
 }
